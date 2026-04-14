@@ -342,6 +342,8 @@ function isActive($page, $current)
             position: sticky;
             top: 0;
             z-index: 999;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .menu-toggle {
@@ -349,6 +351,15 @@ function isActive($page, $current)
             font-size: 1.6rem;
             cursor: pointer;
             color: #2c5a6e;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .menu-toggle:hover {
+            background: #f1f5f9;
         }
 
         .search-bar {
@@ -358,6 +369,9 @@ function isActive($page, $current)
             display: flex;
             align-items: center;
             gap: 12px;
+            flex: 1;
+            max-width: 300px;
+            min-width: 150px;
         }
 
         .search-bar i {
@@ -370,6 +384,7 @@ function isActive($page, $current)
             outline: none;
             font-size: 0.9rem;
             width: 220px;
+            min-width: 100px;
         }
 
         .user-info {
@@ -613,19 +628,273 @@ function isActive($page, $current)
             footer {
                 left: 0;
             }
+
+            /* Top navbar responsive */
+            .top-navbar {
+                padding: 12px 16px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .search-bar input {
+                width: 150px;
+            }
+
+            .user-details {
+                display: none;
+            }
+
+            .notification-dropdown {
+                width: 280px;
+                right: -20px;
+            }
+        }
+
+        /* Breakpoint para tablets */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .stat-card {
+                padding: 16px 18px;
+                border-radius: 20px;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-icon {
+                width: 46px;
+                height: 46px;
+                font-size: 1.5rem;
+            }
+
+            .dashboard-container {
+                padding: 20px 16px;
+            }
+
+            .card {
+                padding: 16px 18px;
+                border-radius: 20px;
+            }
+
+            .card-header h4 {
+                font-size: 1rem;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .top-navbar {
+                padding: 10px 14px;
+            }
+
+            .user-info {
+                gap: 12px;
+            }
+
+            .avatar {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+
+            .notification-dropdown {
+                width: 260px;
+                right: -10px;
+            }
+
+            footer {
+                padding: 12px 16px;
+                font-size: 0.7rem;
+            }
+
+            /* Touch-friendly: elementos interactivos más grandes */
+            .menu-item {
+                padding: 14px 24px;
+                min-height: 48px;
+            }
+
+            .dropdown-item {
+                padding: 10px 20px;
+                min-height: 44px;
+            }
+
+            .btn-small {
+                padding: 8px 14px;
+                font-size: 0.75rem;
+            }
         }
 
         @media (max-width: 580px) {
             .stats-grid {
                 grid-template-columns: 1fr;
+                gap: 14px;
             }
 
             .dashboard-container {
-                padding: 20px;
+                padding: 16px 12px;
             }
 
-            .search-bar input {
-                width: 120px;
+            .stat-card {
+                padding: 14px 16px;
+                border-radius: 16px;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .stat-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 1.3rem;
+            }
+
+            .stat-info h3 {
+                font-size: 0.75rem;
+            }
+
+            .top-navbar {
+                padding: 8px 12px;
+                justify-content: space-between;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .user-info {
+                gap: 10px;
+            }
+
+            .avatar {
+                width: 34px;
+                height: 34px;
+                font-size: 0.85rem;
+            }
+
+            .notification-bell {
+                font-size: 1.1rem;
+            }
+
+            .notification-dropdown {
+                width: 90vw;
+                right: 5vw;
+                top: 45px;
+            }
+
+            .card {
+                padding: 14px 12px;
+                border-radius: 16px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .appointments-table {
+                font-size: 0.8rem;
+            }
+
+            .appointments-table th,
+            .appointments-table td {
+                padding: 10px 2px;
+            }
+
+            footer {
+                padding: 10px 12px;
+                font-size: 0.65rem;
+                position: relative;
+                left: 0;
+                right: 0;
+            }
+
+            /* Touch-friendly: elementos aún más grandes */
+            .menu-item {
+                padding: 16px 20px;
+                min-height: 52px;
+            }
+
+            .dropdown-item {
+                padding: 12px 16px;
+                min-height: 48px;
+            }
+
+            .menu-toggle {
+                padding: 8px;
+                min-width: 44px;
+                text-align: center;
+            }
+
+            .btn-small {
+                padding: 10px 16px;
+                font-size: 0.8rem;
+            }
+
+            .status-badge {
+                padding: 5px 12px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Breakpoint para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .sidebar-header {
+                padding: 20px 18px;
+            }
+
+            .sidebar-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .sidebar-header i {
+                font-size: 26px;
+            }
+
+            .stats-grid {
+                gap: 12px;
+            }
+
+            .stat-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .stat-info {
+                width: 100%;
+            }
+
+            .top-navbar {
+                padding: 6px 10px;
+            }
+
+            .user-role {
+                display: none;
+            }
+
+            .notification-dropdown {
+                width: 95vw;
+                right: 2.5vw;
+            }
+
+            .notif-header h4 {
+                font-size: 0.85rem;
+            }
+
+            .notif-content h5 {
+                font-size: 0.8rem;
+            }
+
+            .notif-content p {
+                font-size: 0.7rem;
             }
         }
 
@@ -820,14 +1089,22 @@ function isActive($page, $current)
             align-items: center;
             justify-content: center;
             border: 2px solid white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
         }
 
         .notification-dropdown {
@@ -837,7 +1114,7 @@ function isActive($page, $current)
             width: 320px;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
             border: 1px solid #eef2f6;
             z-index: 5000;
             display: none;
@@ -846,8 +1123,15 @@ function isActive($page, $current)
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .notif-header {
@@ -897,10 +1181,25 @@ function isActive($page, $current)
             flex-shrink: 0;
         }
 
-        .notif-icon.info { background: #e0f2fe; color: #0ea5e9; }
-        .notif-icon.urgente { background: #fee2e2; color: #ef4444; }
-        .notif-icon.cita { background: #f0fdf4; color: #22c55e; }
-        .notif-icon.pago { background: #fefce8; color: #ca8a04; }
+        .notif-icon.info {
+            background: #e0f2fe;
+            color: #0ea5e9;
+        }
+
+        .notif-icon.urgente {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .notif-icon.cita {
+            background: #f0fdf4;
+            color: #22c55e;
+        }
+
+        .notif-icon.pago {
+            background: #fefce8;
+            color: #ca8a04;
+        }
 
         .notif-content h5 {
             font-size: 0.85rem;
@@ -933,6 +1232,38 @@ function isActive($page, $current)
             font-weight: 600;
             text-decoration: none;
         }
+
+        /* Sidebar overlay para móviles */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Asegurar que el contenido principal sea scrollable en móviles */
+        @media (max-width: 768px) {
+            .main-content {
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .main-content {
+                padding-bottom: 100px;
+            }
+        }
     </style>
     <script>
         // Dropdown menu toggle
@@ -955,7 +1286,7 @@ function isActive($page, $current)
                     e.stopPropagation();
                     const isVisible = dropdown.style.display === 'block';
                     dropdown.style.display = isVisible ? 'none' : 'block';
-                    
+
                     if (!isVisible) {
                         marcarNotificacionesLeidas();
                     }
@@ -1041,7 +1372,12 @@ function isActive($page, $current)
 
         function formatearFechaNotif(fechaStr) {
             const fecha = new Date(fechaStr);
-            return fecha.toLocaleString('es-ES', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+            return fecha.toLocaleString('es-ES', {
+                day: '2-digit',
+                month: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
         }
 
         async function marcarNotificacionesLeidas() {
@@ -1136,6 +1472,9 @@ function isActive($page, $current)
 
         <!-- Main Content -->
         <div class="main-content">
+            <!-- Overlay para sidebar en móviles -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
             <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') { ?>
                 <?php include_once 'sidebar_admin.php'; ?>
             <?php } elseif (isset($_SESSION['rol']) && $_SESSION['rol'] === 'veterinario') { ?>

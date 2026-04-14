@@ -1,22 +1,40 @@
 <footer>
-            <i class="fas fa-paw"></i> VetCare Dashboard — Gestión clínica veterinaria moderna | © 2025 Todos los derechos reservados
-        </footer>
-    </div>
+    <i class="fas fa-paw"></i> VetCare Dashboard — Gestión clínica veterinaria moderna | © 2025 Todos los derechos reservados
+</footer>
+</div>
 </div>
 
 <script>
-    // Toggle menu para responsive
+    // Toggle menu para responsive con overlay
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-    });
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+
+    // Cerrar sidebar al hacer click en el overlay
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
     // Cerrar sidebar al hacer click en un enlace (mejora mobile)
     const menuItems = document.querySelectorAll('.menu-item');
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
-            if(window.innerWidth <= 992) {
+            if (window.innerWidth <= 992) {
                 sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
             }
             // activar clase visual (simulación)
             menuItems.forEach(m => m.classList.remove('active'));
@@ -51,12 +69,34 @@
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-                legend: { position: 'top', labels: { boxWidth: 12, font: { size: 11 } } },
-                tooltip: { backgroundColor: '#1f3e4b', titleColor: '#eef2f8' }
+                legend: {
+                    position: 'top',
+                    labels: {
+                        boxWidth: 12,
+                        font: {
+                            size: 11
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#1f3e4b',
+                    titleColor: '#eef2f8'
+                }
             },
             scales: {
-                y: { grid: { color: '#e6edf4' }, ticks: { stepSize: 5 } },
-                x: { grid: { display: false } }
+                y: {
+                    grid: {
+                        color: '#e6edf4'
+                    },
+                    ticks: {
+                        stepSize: 5
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
             }
         }
     });
@@ -80,20 +120,30 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: false },
-                    tooltip: { backgroundColor: '#1f3e4b' }
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1f3e4b'
+                    }
                 },
                 scales: {
-                    y: { 
-                        beginAtZero: true, 
-                        grid: { color: '#e6edf4' },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e6edf4'
+                        },
                         ticks: {
                             callback: function(value) {
                                 return '$' + value;
                             }
                         }
                     },
-                    x: { grid: { display: false } }
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
                 }
             }
         });
@@ -103,4 +153,5 @@
     // Opcional: hover cards etc. Se mantiene diseño moderno
 </script>
 </body>
+
 </html>
