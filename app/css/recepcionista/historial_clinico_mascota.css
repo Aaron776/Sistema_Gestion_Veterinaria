@@ -1,0 +1,287 @@
+/* Contenido */
+    .historial-container {
+        padding: 28px 32px;
+    }
+
+    /* Header de mascota */
+    .mascota-header {
+        background: white;
+        border-radius: 28px;
+        padding: 20px 28px;
+        margin-bottom: 25px;
+        border: 1px solid #eef2f8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .mascota-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .mascota-avatar {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #d9eef5, #c8e2d0);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #6bcb77;
+    }
+
+    .mascota-datos h3 {
+        color: #1f3e4b;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .mascota-datos p {
+        color: #7f9aab;
+        font-size: 0.85rem;
+    }
+
+    .mascota-datos i {
+        color: #6bcb77;
+        margin-right: 8px;
+    }
+
+    .cliente-info {
+        background: #f8fbfe;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border-left: 4px solid #6bcb77;
+    }
+
+    .cliente-info p {
+        font-size: 0.85rem;
+        color: #5f7f8f;
+    }
+
+    /* Tabla */
+    .table-container {
+        background: white;
+        border-radius: 28px;
+        padding: 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        border: 1px solid #eef2f8;
+        overflow-x: auto;
+    }
+
+    .historial-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+
+    .historial-table thead th {
+        text-align: left;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #f8fbfd, #eef5f9);
+        font-weight: 700;
+        color: #2c5a6e;
+        border-bottom: 2px solid #d4e4ed;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        white-space: nowrap;
+    }
+
+    .historial-table thead th:first-child {
+        width: 60px;
+        text-align: center;
+    }
+
+    .historial-table thead th:nth-child(3) {
+        width: 120px;
+    }
+
+    .historial-table thead th:nth-child(5) {
+        width: 100px;
+    }
+
+    .historial-table tbody td {
+        padding: 18px 20px;
+        border-bottom: 1px solid #f0f4f9;
+        color: #2c3e50;
+        vertical-align: middle;
+        line-height: 1.6;
+    }
+
+    .historial-table tbody td:first-child {
+        text-align: center;
+        font-weight: 700;
+        color: #7f9aab;
+    }
+
+    .historial-table tbody tr {
+        transition: background 0.2s ease;
+    }
+
+    .historial-table tbody tr:hover {
+        background: #f6fafc;
+    }
+
+    .historial-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Badge de peso */
+    .peso-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 14px;
+        border-radius: 40px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        background: #e8f0fe;
+        color: #3498db;
+        width: fit-content;
+    }
+
+    /* Nombre veterinario destacado */
+    .veterinario-nombre {
+        font-weight: 600;
+        color: #1f3e4b;
+        font-size: 0.9rem;
+    }
+
+    /* Diagnostico destacado */
+    .diagnostico-texto {
+        font-weight: 600;
+        color: #1f3e4b;
+        font-size: 0.9rem;
+    }
+
+    /* Fecha limpia */
+    .fecha-texto {
+        color: #5f7f8f;
+        font-size: 0.85rem;
+    }
+
+    /* Mensaje vacío */
+    .empty-message {
+        text-align: center;
+        padding: 60px;
+        color: #8fa3b3;
+    }
+
+    .empty-message i {
+        font-size: 48px;
+        margin-bottom: 12px;
+        display: block;
+        color: #cbd5e0;
+    }
+
+    .empty-message p {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Paginador */
+    .pagination-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: white;
+        border-top: 1px solid #eef2f8;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pagination-info {
+        color: #5f7f8f;
+        font-size: 0.85rem;
+    }
+
+    .pagination-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .page-btn {
+        padding: 8px 14px;
+        border: 1px solid #e2e8f0;
+        background: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .page-btn:hover:not(:disabled) {
+        background: #6bcb77;
+        color: white;
+        border-color: #6bcb77;
+        transform: translateY(-1px);
+    }
+
+    .page-btn.active {
+        background: #6bcb77;
+        color: white;
+        border-color: #6bcb77;
+    }
+
+    .page-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .historial-container {
+            padding: 20px;
+        }
+
+        .historial-table thead th,
+        .historial-table tbody td {
+            padding: 12px 10px;
+        }
+
+        .pagination-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .mascota-info {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .mascota-header {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px 32px;
+        font-size: 0.75rem;
+        color: #7f9aab;
+        border-top: 1px solid #e2e8f0;
+        background: #f8fbfe;
+        margin-top: 20px;
+    }

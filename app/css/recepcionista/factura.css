@@ -1,0 +1,234 @@
+ body { background: #f0f2f5; }
+    .pos-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Columna Izquierda: Ticket / Artículos */
+    .pos-left {
+        flex: 1 1 60%;
+        min-width: 350px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .pos-header {
+        background: linear-gradient(135deg, #1f3e4b, #2c5a6e);
+        padding: 20px 25px;
+        color: white;
+    }
+    
+    .pos-header h2 { font-size: 1.4rem; font-weight: 600; margin-bottom: 5px; }
+    .pos-header p { font-size: 0.85rem; opacity: 0.8; }
+
+    .client-data {
+        background: #f8fbfe;
+        padding: 15px 25px;
+        border-bottom: 1px solid #eef2f8;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: #1f3e4b;
+    }
+
+    .product-list {
+        padding: 20px 25px;
+        flex: 1;
+        overflow-y: auto;
+        min-height: 250px;
+    }
+
+    .ticket-row {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr auto;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .ticket-row.locked {
+        background: #fafbfc;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #e8eef3;
+    }
+
+    .ticket-row:last-child { border-bottom: none; }
+
+    .item-name { font-weight: 600; color: #2c5a6e; font-size: 0.95rem; }
+    .item-meta { font-size: 0.75rem; color: #7f9aab; margin-top: 3px; display: block; }
+    
+    .item-qty input {
+        width: 60px;
+        text-align: center;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 8px;
+        font-weight: bold;
+    }
+
+    .item-price { font-weight: 700; color: #1e293b; text-align: right; }
+    .item-subtotal { font-weight: 800; color: #6bcb77; text-align: right; font-size: 1.1rem; }
+
+    .btn-trash {
+        background: #fee2e2;
+        color: #ef4444;
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+    }
+    .btn-trash:hover { background: #f87171; color: white; }
+
+    /* Buscador de Productos Extra */
+    .addon-section {
+        padding: 20px 25px;
+        background: #f8fbfe;
+        border-top: 1px solid #eef2f8;
+    }
+
+    .addon-box {
+        display: flex;
+        gap: 10px;
+    }
+
+    .addon-box select {
+        flex: 1;
+        padding: 12px 15px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        outline: none;
+    }
+    .addon-box select:focus { border-color: #6bcb77; }
+
+    .btn-add {
+        background: #1f3e4b;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .btn-add:hover { background: #2c5a6e; }
+
+    /* Columna Derecha: Cobro */
+    .pos-right {
+        flex: 1 1 30%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .total-card {
+        background: #1f3e4b;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 10px 25px rgba(31, 62, 75, 0.2);
+    }
+    
+    .total-card span { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+    .total-card h1 { font-size: 3.5rem; font-weight: 800; margin: 10px 0; color: #6bcb77; }
+
+    .payment-card {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .payment-card h3 { font-size: 1rem; color: #1f3e4b; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+
+    .method-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .method-option {
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 15px 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s;
+        color: #64748b;
+    }
+
+    .method-option i { font-size: 1.5rem; margin-bottom: 8px; display: block; }
+    .method-option span { font-size: 0.8rem; font-weight: 600; }
+
+    .method-option:hover { border-color: #cbd5e1; }
+    
+    .method-option.selected {
+        border-color: #6bcb77;
+        background: #f0fdf4;
+        color: #166534;
+    }
+
+    .input-group { margin-bottom: 20px; }
+    .input-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #1e293b; margin-bottom: 8px; }
+    .input-group input {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        outline: none;
+        color: #1e293b;
+    }
+    .input-group input:focus { border-color: #6bcb77; }
+
+    .change-box {
+        background: #f8fafc;
+        border: 1px dashed #cbd5e1;
+        padding: 15px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .change-box span { font-size: 0.9rem; font-weight: 600; color: #475569; }
+    .change-box strong { font-size: 1.4rem; color: #6bcb77; }
+
+    .btn-pay {
+        background: #6bcb77;
+        color: white;
+        width: 100%;
+        border: none;
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+        box-shadow: 0 10px 20px rgba(107, 203, 119, 0.3);
+    }
+    .btn-pay:hover {
+        background: #5ab165;
+        transform: translateY(-2px);
+    }

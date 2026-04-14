@@ -1,0 +1,480 @@
+ /* Contenido */
+    .mascotas-container {
+        padding: 28px 32px;
+    }
+
+    /* Header del cliente */
+    .cliente-header {
+        background: white;
+        border-radius: 28px;
+        padding: 20px 28px;
+        margin-bottom: 25px;
+        border: 1px solid #eef2f8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .cliente-info h3 {
+        color: #1f3e4b;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .cliente-info p {
+        color: #7f9aab;
+        font-size: 0.85rem;
+    }
+
+    .cliente-info i {
+        color: #6bcb77;
+        margin-right: 8px;
+    }
+
+    .btn-add {
+        background: #6bcb77;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 40px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .btn-add:link,
+    .btn-add:visited,
+    .btn-add:hover,
+    .btn-add:active {
+        text-decoration: none;
+        color: white;
+    }
+
+    .btn-add:hover {
+        background: #54b561;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(107, 203, 119, 0.3);
+    }
+
+    /* Filtros */
+    .filters-bar {
+        background: white;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 25px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #eef2f8;
+    }
+
+    .search-box {
+        flex: 1;
+        min-width: 250px;
+        position: relative;
+    }
+
+    .search-box i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #8ba0b0;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 12px 15px 12px 45px;
+        border: 2px solid #e2e8f0;
+        border-radius: 40px;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+
+    .search-box input:focus {
+        outline: none;
+        border-color: #6bcb77;
+    }
+
+    .especie-filter select {
+        padding: 10px 20px;
+        border: 2px solid #e2e8f0;
+        border-radius: 40px;
+        background: white;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .especie-filter select:focus {
+        outline: none;
+        border-color: #6bcb77;
+    }
+
+    /* Tabla */
+    .table-container {
+        background: white;
+        border-radius: 28px;
+        padding: 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        border: 1px solid #eef2f8;
+        overflow-x: auto;
+    }
+
+    .mascotas-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+
+    .mascotas-table thead th {
+        text-align: left;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #f8fbfd, #eef5f9);
+        font-weight: 700;
+        color: #2c5a6e;
+        border-bottom: 2px solid #d4e4ed;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        white-space: nowrap;
+    }
+
+    .mascotas-table thead th:first-child {
+        width: 50px;
+        text-align: center;
+    }
+
+    .mascotas-table thead th:nth-child(2) {
+        width: 70px;
+    }
+
+    .mascotas-table thead th:nth-child(6) {
+        width: 120px;
+    }
+
+    .mascotas-table thead th:last-child {
+        width: 260px;
+    }
+
+    .mascotas-table tbody td {
+        padding: 18px 20px;
+        border-bottom: 1px solid #f0f4f9;
+        color: #2c3e50;
+        vertical-align: middle;
+        line-height: 1.6;
+    }
+
+    .mascotas-table tbody td:first-child {
+        text-align: center;
+        font-weight: 600;
+        color: #7f9aab;
+    }
+
+    .mascotas-table tbody tr {
+        transition: background 0.2s ease;
+    }
+
+    .mascotas-table tbody tr:hover {
+        background: #f6fafc;
+    }
+
+    .mascotas-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Nombre de mascota destacado */
+    .mascota-nombre {
+        font-weight: 600;
+        color: #1f3e4b;
+        font-size: 0.9rem;
+    }
+
+    /* Badge de especie */
+    .especie-badge {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: transform 0.2s ease;
+    }
+
+    .especie-badge:hover {
+        transform: scale(1.1);
+    }
+
+    .especie-perro,
+    .especie-gato,
+    .especie-ave,
+    .especie-roedor,
+    .especie-otro {
+        background: rgba(107, 203, 119, 0.15);
+        color: #6bcb77;
+    }
+
+    /* Foto de mascota */
+    .foto-mascota {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d9eef5, #c8e2d0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        color: #6bcb77;
+        overflow: hidden;
+        border: 2px solid #e8f5ec;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .foto-mascota:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(107, 203, 119, 0.2);
+    }
+
+    .foto-mascota img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .foto-placeholder {
+        font-size: 0.65rem;
+        color: #8fa3b3;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    /* Fecha limpia */
+    .fecha-texto {
+        color: #5f7f8f;
+        font-size: 0.85rem;
+    }
+
+    /* Badges sexo */
+    .sexo-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 14px;
+        border-radius: 40px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        width: fit-content;
+    }
+
+    .sexo-badge::before {
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.7rem;
+    }
+
+    .sexo-macho {
+        background: #e0f0ff;
+        color: #3498db;
+    }
+
+    .sexo-macho::before {
+        content: '\f222';
+    }
+
+    .sexo-hembra {
+        background: #ffe0e8;
+        color: #e74c3c;
+    }
+
+    .sexo-hembra::before {
+        content: '\f221';
+    }
+
+    /* Botones de acción */
+    .action-buttons {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .btn-icon {
+        padding: 7px 12px;
+        border-radius: 30px;
+        transition: all 0.2s;
+        font-size: 0.72rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none !important;
+        border: none;
+        outline: none;
+    }
+
+    .btn-icon i {
+        font-size: 0.75rem;
+    }
+
+    .btn-edit {
+        color: #3498db !important;
+        background: #e8f0fe;
+    }
+
+    .btn-edit:hover {
+        background: #3498db;
+        color: #fff !important;
+        transform: translateY(-2px);
+    }
+
+    .btn-delete {
+        color: #e74c3c !important;
+        background: #fee9e7;
+    }
+
+    .btn-delete:hover {
+        background: #e74c3c;
+        color: #fff !important;
+        transform: translateY(-2px);
+    }
+
+    .btn-history {
+        color: #8e44ad !important;
+        background: #f3e8ff;
+    }
+
+    .btn-history:hover {
+        background: #8e44ad;
+        color: #fff !important;
+        transform: translateY(-2px);
+    }
+
+    .btn-vaccine {
+        color: #f39c12 !important;
+        background: #fef5e8;
+    }
+
+    .btn-vaccine:hover {
+        background: #f39c12;
+        color: #fff !important;
+        transform: translateY(-2px);
+    }
+
+    /* Paginador */
+    .pagination-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: white;
+        border-top: 1px solid #eef2f8;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pagination-info {
+        color: #5f7f8f;
+        font-size: 0.85rem;
+    }
+
+    .pagination-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .page-btn {
+        padding: 8px 14px;
+        border: 1px solid #e2e8f0;
+        background: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .page-btn:hover:not(:disabled) {
+        background: #6bcb77;
+        color: white;
+        border-color: #6bcb77;
+        transform: translateY(-1px);
+    }
+
+    .page-btn.active {
+        background: #6bcb77;
+        color: white;
+        border-color: #6bcb77;
+    }
+
+    .page-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mascotas-container {
+            padding: 20px;
+        }
+
+        .action-buttons {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mascotas-table thead th,
+        .mascotas-table tbody td {
+            padding: 12px 10px;
+        }
+
+        .pagination-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .cliente-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .filters-bar {
+            flex-direction: column;
+        }
+
+        .search-box {
+            min-width: 100%;
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px 32px;
+        font-size: 0.75rem;
+        color: #7f9aab;
+        border-top: 1px solid #e2e8f0;
+        background: #f8fbfe;
+        margin-top: 20px;
+    }

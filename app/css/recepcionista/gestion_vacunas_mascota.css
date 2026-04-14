@@ -1,0 +1,522 @@
+/* Contenido */
+    .vacunas-container {
+        padding: 28px 32px;
+    }
+
+    /* Header de mascota */
+    .mascota-header {
+        background: white;
+        border-radius: 28px;
+        padding: 20px 28px;
+        margin-bottom: 25px;
+        border: 1px solid #eef2f8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .mascota-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .mascota-avatar {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #d9eef5, #c8e2d0);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #6bcb77;
+    }
+
+    .mascota-datos h3 {
+        color: #1f3e4b;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .mascota-datos p {
+        color: #7f9aab;
+        font-size: 0.85rem;
+    }
+
+    .mascota-datos i {
+        color: #6bcb77;
+        margin-right: 8px;
+    }
+
+    .cliente-info {
+        background: #f8fbfe;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border-left: 4px solid #6bcb77;
+    }
+
+    .cliente-info p {
+        font-size: 0.85rem;
+        color: #5f7f8f;
+    }
+
+    .btn-add {
+        background: #6bcb77;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 40px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-add:hover {
+        background: #54b561;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(107, 203, 119, 0.3);
+    }
+
+    /* Tabla */
+    .table-container {
+        background: white;
+        border-radius: 28px;
+        padding: 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        border: 1px solid #eef2f8;
+        overflow-x: auto;
+    }
+
+    .vacunas-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+
+    .vacunas-table thead th {
+        text-align: left;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #f8fbfd, #eef5f9);
+        font-weight: 700;
+        color: #2c5a6e;
+        border-bottom: 2px solid #d4e4ed;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        white-space: nowrap;
+    }
+
+    .vacunas-table thead th:first-child {
+        width: 60px;
+        text-align: center;
+    }
+
+    .vacunas-table thead th:nth-child(2) {
+        width: auto;
+    }
+
+    .vacunas-table thead th:nth-child(3) {
+        width: 160px;
+        text-align: center;
+    }
+
+    .vacunas-table thead th:nth-child(4) {
+        width: 180px;
+    }
+
+    .vacunas-table tbody td {
+        padding: 18px 20px;
+        border-bottom: 1px solid #f0f4f9;
+        color: #2c3e50;
+        vertical-align: middle;
+        line-height: 1.6;
+    }
+
+    .vacunas-table tbody td:first-child {
+        text-align: center;
+        font-weight: 700;
+        color: #7f9aab;
+        font-size: 0.9rem;
+    }
+
+    .vacunas-table tbody td:nth-child(3) {
+        text-align: center;
+    }
+
+    .vacunas-table tbody tr {
+        transition: background 0.2s ease;
+    }
+
+    .vacunas-table tbody tr:hover {
+        background: #f6fafc;
+    }
+
+    .vacunas-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Nombre de vacuna destacado */
+    .vacuna-nombre {
+        font-weight: 600;
+        color: #1f3e4b;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .vacuna-nombre::before {
+        content: '';
+        width: 4px;
+        height: 24px;
+        background: #6bcb77;
+        border-radius: 4px;
+        flex-shrink: 0;
+    }
+
+    /* Fecha con formato limpio */
+    .fecha-texto {
+        color: #5f7f8f;
+        font-size: 0.85rem;
+    }
+
+    /* Badge de próxima dosis */
+    .proxima-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .proxima-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 6px 16px;
+        border-radius: 40px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: fit-content;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .proxima-badge::before {
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.7rem;
+    }
+
+    .proxima-urgente {
+        background: #fee9e7;
+        color: #e74c3c;
+    }
+
+    .proxima-urgente::before {
+        content: '\f071';
+    }
+
+    .proxima-cercana {
+        background: #fff0db;
+        color: #c97e00;
+    }
+
+    .proxima-cercana::before {
+        content: '\f017';
+    }
+
+    .proxima-normal {
+        background: #e0f7e8;
+        color: #2b7e3a;
+    }
+
+    .proxima-normal::before {
+        content: '\f00c';
+    }
+
+    .proxima-fecha {
+        font-size: 0.75rem;
+        color: #8fa3b3;
+    }
+
+    /* Botones de acción */
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .btn-icon {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 6px 10px;
+        border-radius: 30px;
+        transition: all 0.2s;
+        font-size: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .btn-edit {
+        color: #3498db;
+        background: #e8f0fe;
+    }
+
+    .btn-edit:hover {
+        background: #3498db;
+        color: white;
+    }
+
+    .btn-delete {
+        color: #e74c3c;
+        background: #fee9e7;
+    }
+
+    .btn-delete:hover {
+        background: #e74c3c;
+        color: white;
+    }
+
+    /* Paginador */
+    .pagination-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: white;
+        border-top: 1px solid #eef2f8;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pagination-info {
+        color: #5f7f8f;
+        font-size: 0.85rem;
+    }
+
+    .pagination-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .page-btn {
+        padding: 8px 14px;
+        border: 1px solid #e2e8f0;
+        background: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .page-btn:hover:not(:disabled) {
+        background: #6bcb77;
+        color: white;
+        border-color: #6bcb77;
+    }
+
+    .page-btn.active {
+        background: #6bcb77;
+        color: white;
+        border-color: #6bcb77;
+    }
+
+    .page-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .page-select {
+        padding: 8px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 30px;
+        background: white;
+        cursor: pointer;
+    }
+
+    /* Modal */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+        background: white;
+        border-radius: 32px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #1f3e4b, #2c5a6e);
+        padding: 20px 25px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .modal-close {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        transition: all 0.2s;
+    }
+
+    .modal-body {
+        padding: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #1f3e4b;
+        font-size: 0.85rem;
+    }
+
+    .form-group label i {
+        margin-right: 8px;
+        color: #6bcb77;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e2e8f0;
+        border-radius: 16px;
+        font-size: 0.9rem;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #6bcb77;
+    }
+
+    .modal-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .modal-btn-save {
+        background: #6bcb77;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: 600;
+        flex: 1;
+    }
+
+    .modal-btn-cancel {
+        background: #eef2f5;
+        color: #2c5a6e;
+        border: none;
+        padding: 12px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: 600;
+        flex: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .vacunas-container {
+            padding: 20px;
+        }
+
+        .action-buttons {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .vacunas-table thead th,
+        .vacunas-table tbody td {
+            padding: 12px 10px;
+        }
+
+        .pagination-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .mascota-info {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px 32px;
+        font-size: 0.75rem;
+        color: #7f9aab;
+        border-top: 1px solid #e2e8f0;
+        background: #f8fbfe;
+        margin-top: 20px;
+    }
